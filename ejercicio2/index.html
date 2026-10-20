@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Calcula el promedio de tres notas sobre 10."
+    />
+    <title>Promedio de notas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="calculator">
+      <header class="calculator__header">
+        <span class="calculator__icon" aria-hidden="true">∑</span>
+        <p class="eyebrow">Herramienta de cálculo</p>
+        <h1>Promedio de notas</h1>
+        <p class="intro">
+          Ingresa tus tres notas sobre 10 para calcular el promedio.
+        </p>
+      </header>
+
+      <form id="grades-form" class="calculator__form">
+        <div class="grade-fields">
+          <div class="grade-field">
+            <label for="grade-1">Nota 1</label>
+            <div class="input-row">
+              <input
+                id="grade-1"
+                name="grade-1"
+                type="number"
+                min="0"
+                max="10"
+                step="any"
+                placeholder="Ej. 8"
+                required
+                autofocus
+              />
+              <span class="unit" aria-hidden="true">/ 10</span>
+            </div>
+          </div>
+          <div class="grade-field">
+            <label for="grade-2">Nota 2</label>
+            <div class="input-row">
+              <input
+                id="grade-2"
+                name="grade-2"
+                type="number"
+                min="0"
+                max="10"
+                step="any"
+                placeholder="Ej. 9"
+                required
+              />
+              <span class="unit" aria-hidden="true">/ 10</span>
+            </div>
+          </div>
+          <div class="grade-field">
+            <label for="grade-3">Nota 3</label>
+            <div class="input-row">
+              <input
+                id="grade-3"
+                name="grade-3"
+                type="number"
+                min="0"
+                max="10"
+                step="any"
+                placeholder="Ej. 7"
+                required
+              />
+              <span class="unit" aria-hidden="true">/ 10</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit">Calcular promedio</button>
+      </form>
+
+      <section
+        id="results"
+        class="results"
+        aria-labelledby="results-title"
+        aria-live="polite"
+        hidden
+      >
+        <h2 id="results-title">Tu promedio</h2>
+        <div class="result-card">
+          <output id="average" class="result-card__value"></output>
+          <span class="result-card__unit">/ 10</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

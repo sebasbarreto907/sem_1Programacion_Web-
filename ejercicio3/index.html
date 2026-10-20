@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Calcula la propina de una cuenta y cuánto paga cada persona."
+    />
+    <title>División de la cuenta</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="calculator">
+      <header class="calculator__header">
+        <span class="calculator__icon" aria-hidden="true">$</span>
+        <p class="eyebrow">Herramienta de cálculo</p>
+        <h1>División de la cuenta</h1>
+        <p class="intro">
+          Calcula la propina y divide el total entre todas las personas.
+        </p>
+      </header>
+
+      <form id="bill-form" class="calculator__form">
+        <div class="field">
+          <label for="bill-total">Total de la cuenta</label>
+          <div class="input-row">
+            <input
+              id="bill-total"
+              name="bill-total"
+              type="number"
+              min="0"
+              step="any"
+              placeholder="Ej. 120"
+              required
+              autofocus
+            />
+            <span class="unit" aria-hidden="true">$</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="tip-percentage">Porcentaje de propina</label>
+          <div class="input-row">
+            <input
+              id="tip-percentage"
+              name="tip-percentage"
+              type="number"
+              min="0"
+              step="any"
+              placeholder="Ej. 10"
+              required
+            />
+            <span class="unit" aria-hidden="true">%</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="people">Número de personas</label>
+          <div class="input-row">
+            <input
+              id="people"
+              name="people"
+              type="number"
+              min="1"
+              step="1"
+              placeholder="Ej. 4"
+              required
+            />
+            <span class="unit" aria-hidden="true">personas</span>
+          </div>
+        </div>
+
+        <button type="submit">Calcular división</button>
+      </form>
+
+      <section
+        id="results"
+        class="results"
+        aria-labelledby="results-title"
+        aria-live="polite"
+        hidden
+      >
+        <h2 id="results-title">Resumen de la cuenta</h2>
+        <dl class="result-list">
+          <div class="result-row">
+            <dt>Propina</dt>
+            <dd><output id="tip-amount"></output></dd>
+          </div>
+          <div class="result-row">
+            <dt>Total con propina</dt>
+            <dd><output id="total-with-tip"></output></dd>
+          </div>
+          <div class="result-row result-row--highlight">
+            <dt>Paga cada persona</dt>
+            <dd><output id="per-person"></output></dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+  </body>
+</html>
